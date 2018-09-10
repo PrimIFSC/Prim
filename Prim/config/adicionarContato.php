@@ -1,11 +1,13 @@
 <?php
 include '../cabe/cabecalho.php';
 ?>
-<h2 id="config">Adicionar contato</h2>
+<div id="config">
+    <h2>Adicionar contato</h2><br>
 <form action="busca.php" method="post">
 <input type="search" name="busca">
 <input type="submit" value="Buscar">
 </form>
+</div>
 <?php
 
 include '../usuario/listar.php';

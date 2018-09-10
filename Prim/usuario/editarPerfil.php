@@ -12,12 +12,12 @@
         ?>
         
 <div id="config">
-    <h2 id="up">Editar perfil</h2>
+    <h2 id="up">Editar perfil</h2><br>
         <form method="post" action="editar.php">
             <input type="hidden" name="id" value="<?= $id ?>">
-            <a id="confi" href="alterarFoto.php"><img src="../img/fotoCont.png" height="70" width="70"/></a>
+            <a id="confi" href="alterarFoto.php"><img src="../img/fotoCont.png" height="70" width="70"/></a><br><br>
             <h3 id="confi">Informações pessoais</h3>
-            Nome: <input type="text" name="nome" value="<?= $linha['nome'] ?>">
+            Nome: <input type="text" name="nome" value="<?= $linha['nome'] ?>"><br><br>
             <h3 id="confi">Informações de contato</h3>
             E-mail: <input type="text" name="email" value="<?= $linha['email'] ?>"><br><br>
             <input id="save" type="submit" value="Salvar"<button onclick="myFunction3()"></button>

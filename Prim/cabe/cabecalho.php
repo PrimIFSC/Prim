@@ -19,7 +19,7 @@ session_start();
             <ul>              
                 <li><img src="../img/config.png" height="35" width="35" onclick="prim()" /></li>	
                 <li id="prim"><a href="../pagina/principal.php">PRIM</a></li>
-                <li id="user"><a href="../usuario/editarPerfil.php"><?=$_SESSION[email]?></a></li>
+                <li id="user"><a href="../usuario/editarPerfil.php"><?=$_SESSION[nome]?></a></li>
             </ul>
 	</div>
         <?php
@@ -46,7 +46,7 @@ function myFunction() {
     if (confirm("Deseja mesmo sair?")) {
         location.href="../config/sair.php";
     } else {
-        location.href='../pagina/configurar.php';
+        location.href='../cabe/cabecalho.php';
     }
     document.getElementById("demo").innerHTML = txt;
 }

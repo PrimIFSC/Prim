@@ -11,6 +11,7 @@ $resultado = mysqli_query($conexao, $query);
 $resultado_contato = mysqli_query($conexao, $sql);
 ?>
 <link type="text/css" rel="stylesheet" href="../css/style.css">
+<div id="config2">
 <table>            
     <?php
     $contato = false;
@@ -41,3 +42,4 @@ $resultado_contato = mysqli_query($conexao, $sql);
         }
         ?>
 </table>
+</div>

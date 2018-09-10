@@ -46,7 +46,6 @@ height: 100%;
 #conf ul {
     text-decoration: none;
     list-style-type: none;
-    margin-right: 400px;
     width: 15%;
     background-color: #f1f1f1;
     display: inline-block;
@@ -71,13 +70,21 @@ height: 100%;
 
 #con {
     font-size: 22px;
-    padding: 10px;
+    padding: 20px;
 }
 
 #config {
     margin-top: 60px;
     width: 88%;
     padding-bottom: 20px;
+    margin-left: 43%;
+}
+
+#config2 {
+    margin-top: 10px;
+    width: 88%;
+    padding-bottom: 20px;
+    margin-left: 43%;
 }
 
 #confi {
@@ -123,7 +130,7 @@ height: 100%;
 }
 
 #ok{
-    margin-left: 55%;
+    margin-left: 19%;
     margin-top: 2%;
 }
 

@@ -6,9 +6,10 @@ session_start();
  * @param $username será o identificador da seção
  */
 
-function logar($email, $id){
+function logar($email, $id, $nome){
     $_SESSION['email'] = $email;
     $_SESSION['id'] = $id;
+    $_SESSION['nome'] = $nome;
     iniciarTempoSessao();
 }
 

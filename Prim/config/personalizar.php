@@ -2,7 +2,8 @@
 include '../cabe/cabecalho.php';
 
 ?>
-<h2 id="config">Personalizar</h2>
+<div id="config">
+    <h2>Personalizar</h2><br>
 
 <h4>Alterar fundo</h4>
 <br>
@@ -46,3 +47,5 @@ include '../cabe/cabecalho.php';
 <br><br>
 
 <input id="ok" type="submit" value="Ok">
+
+</div>

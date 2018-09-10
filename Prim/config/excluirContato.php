@@ -4,7 +4,8 @@ include '../cabe/cabecalho.php';
 include '../conectar.php';
 
 ?>
-<h2 id="config">Excluir contato</h2>
+<div id="config"> 
+    <h2>Excluir contato</h2><br>
 <?php
 
 $sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id
@@ -40,3 +41,4 @@ function myFunction2(id) {
 }
 </script>
 </table>
+</div>

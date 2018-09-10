@@ -9,6 +9,7 @@ $sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id j
 $resultado = mysqli_query($conexao, $sql);
 ?>
 <link type="text/css" rel="stylesheet" href="../css/style.css">
+<div id="config">
 <table id="list">
     <?php
     while ($linha = mysqli_fetch_array($resultado)) {
@@ -120,3 +121,4 @@ window.onclick = function(event) {
 ?>
 
 </table>
+</div>

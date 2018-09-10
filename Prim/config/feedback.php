@@ -2,7 +2,8 @@
 include '../cabe/cabecalho.php';
 
 ?>
-<h2 id="config">Feedback</h2><br>
+<div id="config">
+    <h2>Feedback</h2><br><br>
 
 <form method="post" action="comentFeedback.php">
     
@@ -26,3 +27,5 @@ function myFunction4() {
     document.getElementById("demo").innerHTML = txt;
 }
 </script>
+
+</div>

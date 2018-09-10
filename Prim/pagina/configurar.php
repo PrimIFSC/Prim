@@ -24,7 +24,7 @@ function myFunction() {
     if (confirm("Deseja mesmo sair?")) {
         location.href="../config/sair.php";
     } else {
-        location.href='../pagina/configurar.php';
+        location.href='../cabe/cabecalho.php';
     }
     document.getElementById("demo").innerHTML = txt;
 }
