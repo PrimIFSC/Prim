@@ -14,6 +14,7 @@ and open the template in the editor.
         <?php 
         include '../cabe/cabecalho.php';
         include '../usuario/listarContatos.php';
+
         ?>
     </body>
 </html>

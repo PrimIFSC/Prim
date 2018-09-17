@@ -11,7 +11,7 @@ $sql = "insert into conteudo (conteudo) values ($mensagem)";
 
 mysqli_query($conexao, $sql);
 
-$query = "insert into mensagem (usuario_id, contato_id) values ($id_usuario, $id_contato)";
+$query = "insert into mensagem (usuario_id) values ($id_usuario)";
 
 mysqli_query($conexao, $query);
 

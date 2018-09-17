@@ -10,7 +10,7 @@ include '../cabe/cabecalho.php';
     <button class="button button5" onclick="black()"></button>
     <button class="button button6" onclick="plum()"></button>
     <button class="button button7" onclick="orange()"></button>
-    <form action="../mudarCor.php" method="post"> 
+    <form action="../pagina/principal.php" method="post"> 
         <input type="hidden" name="cor" value="green">    
     <button type="submit">Salvar</button>
     </form>

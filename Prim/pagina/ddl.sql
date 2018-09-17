@@ -61,3 +61,7 @@ select c.id, c.nome from usuario u left join lista on u.id=lista.usuario_id righ
    where  lista.usuario_id is null and c.id !=  2
 
 select * from conteudo;
+
+select * from mensagem;
+
+insert into conteudo (conteudo) values ('oi');

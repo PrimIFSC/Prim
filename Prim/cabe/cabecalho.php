@@ -6,7 +6,10 @@ and open the template in the editor.
 -->
 <?php
 session_start();
-?>
+        $cor = $_POST['cor'];
+        ?>
+ 
+
 <html>
     <head>
         <meta charset="UTF-8">
