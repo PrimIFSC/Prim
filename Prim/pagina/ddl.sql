@@ -64,4 +64,6 @@ select * from conteudo;
 
 select * from mensagem;
 
-insert into conteudo (conteudo) values ('oi');
+select * from usuario
+
+insert into conteudo (conteudo, tipo) values ('oio', 'a');

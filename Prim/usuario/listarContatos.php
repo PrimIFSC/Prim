@@ -82,6 +82,7 @@ $resultado = mysqli_query($conexao, $sql);
        <button name="tipo" value="i"> <a href="imagem.php"><img src="../img/imagem.png" height="20" width="20"/></a></button>
        <button name="tipo" value="v"> <a href="video.php"><img src="../img/video.png" height="20" width="20"/></a></button>
        <button name="tipo" value="tempo"> <a href="tempo.php"><img src="../img/time.png" height="20" width="20"/></a></button>
+       <input type="hidden" name="id_contato" value="<?=$linha['id']?>" >
     <input type="submit" value="Enviar">
     </form>
   </div>
