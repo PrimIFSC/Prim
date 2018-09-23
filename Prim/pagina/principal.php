@@ -16,5 +16,6 @@ and open the template in the editor.
         include '../usuario/listarContatos.php';
 
         ?>
+        <a id="config" href="../usuario/receber.php">Mensagens</a>
     </body>
 </html>

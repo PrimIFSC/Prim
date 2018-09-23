@@ -27,11 +27,13 @@ select * from usuario where id = 2;
 
 SELECT id, nome FROM usuario where id = 1 and usuario_id = 2;
 
-create table conteudo(
- id int primary key auto_increment,
- conteudo varchar(255) not null,
- tipo ENUM('a', 'i', 't', 'v')
-);
+--create table conteudo(
+ --id int primary key auto_increment,
+ --conteudo varchar(255) not null,
+ --tipo ENUM('a', 'i', 't', 'v')
+--);
+
+--drop table conteudo;
 
 create table mensagem(
  id int primary key auto_increment,
@@ -40,6 +42,12 @@ create table mensagem(
  conteudo_id integer references conteudo(id),
   hora timestamp -- pega data e hora
 );
+
+alter table mensagem add  conteudo varchar(255) not null
+
+alter table mensagem add tipo ENUM('a', 'i', 't', 'v');
+
+--alter table mensagem drop column conteudo_id
 
 select now() -- botar isso no insert da mensagem
 
@@ -72,4 +80,4 @@ select nome from usuario where id = 10;
 
 select * from mensagem;
 
-select * from conteudo;
+--fazer a tabela mensagem com as coisas que tem no conteúdo
