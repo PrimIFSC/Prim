@@ -33,7 +33,7 @@ SELECT id, nome FROM usuario where id = 1 and usuario_id = 2;
  --tipo ENUM('a', 'i', 't', 'v')
 --);
 
---drop table conteudo;
+drop table conteudo;
 
 create table mensagem(
  id int primary key auto_increment,
@@ -43,11 +43,11 @@ create table mensagem(
   hora timestamp -- pega data e hora
 );
 
-alter table mensagem add  conteudo varchar(255) not null
+alter table mensagem add  conteudo varchar(255) not null;
 
 alter table mensagem add tipo ENUM('a', 'i', 't', 'v');
 
---alter table mensagem drop column conteudo_id
+alter table mensagem drop column conteudo_id
 
 select now() -- botar isso no insert da mensagem
 

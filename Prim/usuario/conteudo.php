@@ -14,6 +14,6 @@ $sql = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tipo) valu
 
 mysqli_query($conexao, $sql);
 
-//header("Location: mensagem.php");
+header("Location: ../pagina/principal.php");
 
 //echo $mensagem;

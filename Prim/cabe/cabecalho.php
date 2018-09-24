@@ -23,6 +23,7 @@ session_start();
                 <li><img src="../img/config.png" height="35" width="35" onclick="prim()" /></li>	
                 <li id="prim"><a href="../pagina/principal.php">PRIM</a></li>
                 <li id="user"><a href="../usuario/editarPerfil.php"><?=$_SESSION[nome]?></a></li>
+                <li id="user2"><a href="../usuario/receber.php">Mensagens</a></li>
             </ul>
 	</div>
         <?php

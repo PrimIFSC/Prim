@@ -49,3 +49,4 @@ function getUsername() {
 function iniciarTempoSessao() {
     $_SESSION['tempo'] = time() + 10;
 }
+
