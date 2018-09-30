@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 
 include '../conectar.php';
 
@@ -18,7 +18,7 @@ $resultado = mysqli_query($conexao, $sql);
             <img src="../img/user.svg" height="80" width="80">
         </tr>
         <tr>
-        <a class="tra" <?= $linha['id']?> id="myBtn"><?= $linha['nome']?></a>
+            <a class="tra" <?= $linha['id']?> id="myBtn"><?= $linha['nome']?></a>
         </tr>
         
 
@@ -75,18 +75,26 @@ $resultado = mysqli_query($conexao, $sql);
 
   <!-- Modal content -->
   <div class="modal-content">
+      <div id="content">
     <span class="close">&times;</span>
-    <form action="../usuario/conteudo.php" method="post">
-        <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem"></textarea><br>
+    <form action="../usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
+        <div class="col-lg-12">
+            <div class="input-group">
+                <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem" class="form-control"></textarea><br>
        <button name="tipo" value="a"> <a href="audio.php"><img src="../img/audio.png" height="20" width="20"/></a></button>  
        <button name="tipo" value="i"> <a href="imagem.php"><img src="../img/imagem.png" height="20" width="20"/></a></button>
        <button name="tipo" value="v"> <a href="video.php"><img src="../img/video.png" height="20" width="20"/></a></button>
        <button name="tipo" value="tempo"> <a href="tempo.php"><img src="../img/time.png" height="20" width="20"/></a></button>
        <input type="hidden" name="id_contato" value="<?=$linha['id']?>" >
-    <input type="submit" value="Enviar">
-    </form>
+       <span class="input-group-btn">
+       <input type="submit" value="&rang; &rang;" class="btn btn-success">
+       </span>
+       </div>
+        </div>
+    </form> 
+    <br><br><br><br><br><br><br>
+      </div>
   </div>
-
 </div>
 
 <script>

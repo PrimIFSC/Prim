@@ -12,7 +12,7 @@ contato_id int references usuario(id),
 primary key(usuario_id, contato_id)
 );
 
-select * from usuario;
+
 select * from lista;
 
 select .nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id
@@ -79,5 +79,14 @@ INSERT INTO `lista` (`usuario_id`, `contato_id`) VALUES
 select nome from usuario where id = 10;
 
 select * from mensagem;
+select * from usuario;
 
 --fazer a tabela mensagem com as coisas que tem no conteúdo
+
+select usuario.nome, mensagem.hora, mensagem.conteudo, mensagem.usuario_id, mensagem.contato_id from mensagem join usuario on mensagem.contato_id=4 and mensagem.usuario_id=3 and mensagem.usuario_id=usuario.id
+
+select usuario.nome, usuario.id, mensagem.hora, mensagem.conteudo, mensagem.usuario_id, mensagem.contato_id from mensagem join usuario on mensagem.contato_id=4 and mensagem.usuario_id=3 and mensagem.usuario_id=usuario.id
+
+select usuario.nome, usuario.id, mensagem.hora, mensagem.conteudo, mensagem.usuario_id, mensagem.contato_id from mensagem join usuario on mensagem.usuario_id=usuario.id and mensagem.usuario_id=3 where mensagem.contato_id=4
+
+select usuario.nome, mensagem.hora, mensagem.conteudo from mensagem join usuario on mensagem.usuario_id=usuario.id where mensagem.usuario_id=3 and mensagem.contato_id=4

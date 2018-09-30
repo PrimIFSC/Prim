@@ -6,6 +6,10 @@ $id_usuario = $_SESSION[id];
 $id_contato = $_POST[id_contato];
 $mensagem = $_POST['mensagem'];
 $tipo = $_POST['tipo'];
+
+if ($tipo == null){
+    $tipo = "t";
+}
 //echo $id_usuario;
 //echo $id_contato;
 //echo $tipo;

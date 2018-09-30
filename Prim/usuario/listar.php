@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 include '../conectar.php';
 
 $query = "select * from usuario where id !=  $_SESSION[id]";
