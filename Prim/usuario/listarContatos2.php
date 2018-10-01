@@ -20,9 +20,9 @@ $sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id j
 $resultado = mysqli_query($conexao, $sql);
 ?>
 <link type="text/css" rel="stylesheet" href="../css/style.css">
-<div id="config">
+<div id="config3">
     <div class="container">
-<table id="list">
+        <table>
     <?php
     while ($linha = mysqli_fetch_array($resultado)) {
         ?>
@@ -31,12 +31,12 @@ $resultado = mysqli_query($conexao, $sql);
             <img src="../img/user.svg" height="80" width="80">
         </tr>
         <tr>
-            <button type="button" <?= $linha['id']?> class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><?= $linha['nome']?></button>
-        </tr>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
+        </tr>  
 
-    
-
-
+<?php
+    }
+    ?>
   
   <!-- Trigger the modal with a button -->
   
@@ -60,8 +60,8 @@ $resultado = mysqli_query($conexao, $sql);
        <button name="tipo" value="i"> <a href="imagem.php"><img src="../img/imagem.png" height="20" width="20"/></a></button>
        <button name="tipo" value="v"> <a href="video.php"><img src="../img/video.png" height="20" width="20"/></a></button>
        <button name="tipo" value="tempo"> <a href="tempo.php"><img src="../img/time.png" height="20" width="20"/></a></button>
-       <input type="hidden" name="id_contato" value="<?=$linha['id']?>" />
        <span class="input-group-btn">
+           <input type="hidden" id="id" name="id">
        <input type="submit" value="&rang; &rang;" class="btn btn-success">
        </span>
        </div>
@@ -75,11 +75,19 @@ $resultado = mysqli_query($conexao, $sql);
       
     </div>
   </div>
-  
+
 </div>
-    <?php
-    }
-    ?>
+    <script>    
+    $('#myModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var id = button.data('id') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-body #id').val(id)
+})
+</script>
+
 </table>
 </body>
 </html>

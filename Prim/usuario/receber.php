@@ -4,7 +4,7 @@ include '../conectar.php';
 include '../cabe/cabecalho.php';
 //include './autenticar.php';
 
-$sql = "select * from mensagem where contato_id = $_SESSION[id]";
+$sql = "select * from mensagem where contato_id = $_SESSION[id] group by usuario_id";
 $resultado = mysqli_query($conexao, $sql);  
 
 ?>
@@ -21,7 +21,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
     <tr>
         <td><br><a id="li" href="mensagem2.php?id=<?= $linha2['id']?>&nome=<?= $linha2['nome']?>"><?= $linha2['nome']?></a></td>
     </tr>
-    </form>
+    
     <?php
     break;
 }

@@ -2,8 +2,8 @@
 session_start();
 include '../conectar.php';
 
-$id_usuario = $_SESSION[id];
-$id_contato = $_POST[id_contato];
+$id_usuario = $_SESSION['id'];
+$id_contato = $_POST['id'];
 $mensagem = $_POST['mensagem'];
 $tipo = $_POST['tipo'];
 
