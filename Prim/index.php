@@ -27,17 +27,11 @@ and open the template in the editor.
     <![endif]-->
   </head>
   <body>
-      <div class="row">
-          <div class="col-md-6 col-md-offset 3">
-            <center> 
-        <div id="content">
+     
              <?php
              include './usuario/form_login.php';
              ?>
-        </div>
-            </center>
-          </div>
-      </div>
+        
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

@@ -22,6 +22,11 @@ $resultado = mysqli_query($conexao, $sql);
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <div id="config3">
     <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset 3">
+            <center> 
+        <div id="content">
+             
         <table>
     <?php
     while ($linha = mysqli_fetch_array($resultado)) {
@@ -37,7 +42,9 @@ $resultado = mysqli_query($conexao, $sql);
 <?php
     }
     ?>
-  
+        </div>
+          </div>
+        </div>
   <!-- Trigger the modal with a button -->
   
 

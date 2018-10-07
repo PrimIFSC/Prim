@@ -12,7 +12,12 @@ and open the template in the editor.
     </head>
     <body><?php
         ?>
-    <center>           
+        <div class="row">
+          <div class="col-md-6 col-md-offset 3">
+            <center> 
+        <div id="content">
+        
+    <center>    
             <form id="log" method="post" action="usuario/login.php" enctype="multipart/form-data">
                 <h1><I>PRIM</i></h1><br><br><br>
                 <label>E-mail:</label> 
@@ -23,5 +28,9 @@ and open the template in the editor.
                     <p><input type="submit" value="Entrar" class="btn btn-primary btn-lg btn-block"></p>
         </form>
     </center>
+            </div>
+            
+          </div>
+      </div>
     </body>
 </html>

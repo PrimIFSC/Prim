@@ -21,6 +21,7 @@ and open the template in the editor.
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <link href="css/style.css" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -40,10 +41,14 @@ and open the template in the editor.
              <center>
         <form id="log" method="post" action="cadastrar.php">
             <h1><I>PRIM</i></h1><br><br><br>
-            Nome: <input type="text" name="nome" required class="form-control" placeholder="Nome"><br><br>
-            E-mail: <input type="email" name="email" required class="form-control" placeholder="E-mail"><br><br>
-            Senha: <input type="password" name="senha" required class="form-control" placeholder="********"><br><br>
-            Repetir senha: <input type="password" name="repSenha" required class="form-control" placeholder="********"><br><br><br>
+            <label>Nome</label>
+            <input type="text" name="nome" required class="form-control" placeholder="Nome"><br><br>
+            <label>E-mail:</label>
+            <input type="email" name="email" required class="form-control" placeholder="E-mail"><br><br>
+            <label>Senha:</label> 
+            <input type="password" name="senha" required class="form-control" placeholder="********"><br><br>
+            <label>Repetir senha: </label>
+            <input type="password" name="repSenha" required class="form-control" placeholder="********"><br><br><br>
             <input type="submit" value="Concluir" required class="btn btn-primary btn-lg btn-block">
         </form>
     </center>
