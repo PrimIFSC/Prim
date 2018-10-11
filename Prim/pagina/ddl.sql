@@ -26,6 +26,20 @@ create table mensagem(
   hora timestamp -- pega data e hora
 );
 
+--------------------alter table mensagem add status ENUM('L', 'N') default 'N';
+
+--create table online(
+  --usuario_id int references usuario(id),
+  --last_activity timestamp,
+  --primary key(usuario_id)  
+--);
+
+--alter table mensagem add  conteudo varchar(255) not null;
+
+--alter table mensagem add tipo ENUM('a', 'i', 't', 'v');
+
+--alter table mensagem drop column conteudo_id
+
 select * from usuario;
 select * from lista;
 

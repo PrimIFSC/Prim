@@ -1,4 +1,17 @@
-<?php
+
+                
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <?php
 //session_start();
 
 include '../conectar.php';
@@ -9,75 +22,52 @@ $sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id j
 $resultado = mysqli_query($conexao, $sql);
 ?>
 <link type="text/css" rel="stylesheet" href="../css/style.css">
-<div id="config">
-<table id="list">
+<div id="config3">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset 3">
+            <center> 
+        <div id="content">
+             
+        <table>
     <?php
     while ($linha = mysqli_fetch_array($resultado)) {
         ?>
+    
         <tr>
             <img src="../img/user.svg" height="80" width="80">
         </tr>
         <tr>
-            <a class="tra" <?= $linha['id']?> id="myBtn"><?= $linha['nome']?></a>
-        </tr>
-        
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
+        </tr>  
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+<?php
+    }
+    ?>
+        </div>
+          </div>
+        </div>
+  <!-- Trigger the modal with a button -->
+  
 
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 35%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-</style>
-</head>
-<body>
-
-
-<!-- Trigger/Open The Modal -->
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-      <div id="content">
-    <span class="close">&times;</span>
-    <form action="../usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <p>
+              <script>
+                $.ajax({
+                    url:"../usuario/conteudo.php",
+                    method: "POST";
+                }) 
+                </script>
         <div class="col-lg-12">
             <div class="input-group">
                 <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem" class="form-control"></textarea><br>
@@ -85,49 +75,36 @@ $resultado = mysqli_query($conexao, $sql);
        <button name="tipo" value="i"> <a href="imagem.php"><img src="../img/imagem.png" height="20" width="20"/></a></button>
        <button name="tipo" value="v"> <a href="video.php"><img src="../img/video.png" height="20" width="20"/></a></button>
        <button name="tipo" value="tempo"> <a href="tempo.php"><img src="../img/time.png" height="20" width="20"/></a></button>
-       <input type="hidden" name="id_contato" value="<?=$linha['id']?>" >
        <span class="input-group-btn">
+           <input type="hidden" id="id" name="id">
        <input type="submit" value="&rang; &rang;" class="btn btn-success">
        </span>
        </div>
+        </div> </p>
         </div>
-    </form> 
-    <br><br><br><br><br><br><br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
+      
+    </div>
   </div>
+
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+    <script>    
+    $('#myModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var id = button.data('id') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-body #id').val(id)
+})
 </script>
-    
-    <?php
-}
-?>
+
+
 
 </table>
-</div>
+</body>
+</html>
+                

@@ -35,10 +35,39 @@ while ($linha = mysqli_fetch_array($resultado)) {
                     echo $_SESSION['nome'];
                             
                 }?></td>
-                <td><br><br><?=$linha['conteudo']?></td>
+                <td><?=$linha['conteudo']?></td>
                 <td id="espaco"></td>
-                <td><?=$linha['hora']?></td>
+                <td><br><br><?=$linha['hora']?></td>
             </tr>
+            
+            <script>
+                
+                function cont(<?=$linha['id']?>) {
+    var txt;
+    if () {
+        delete();
+    } else {
+        
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+                
+                
+                
+function delete(<?=$linha['id']?>) {
+    var txt;
+    if (status=='N') {
+        <?php
+        $query = "delete from mensagem where id = $linha[id]";
+        mysqli_query($conexao, $query);
+        ?>
+    } else {
+        
+    }
+    document.getElementById("demo").innerHTML = txt;
+}
+
+</script>
                 
             <?php
 //            break;
@@ -50,4 +79,6 @@ while ($linha = mysqli_fetch_array($resultado)) {
 ?>
 </table>
 </div>
+
+
 

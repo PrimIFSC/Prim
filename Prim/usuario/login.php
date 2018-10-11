@@ -15,6 +15,7 @@ $resultado = mysqli_fetch_array($retorno);
 
 if ($resultado == null){
     echo 'Usuario e senha nao conferem';
+    
 }else{
     logar($resultado['email'], $resultado['id'], $resultado['nome']);
     
