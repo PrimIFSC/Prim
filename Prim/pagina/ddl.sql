@@ -26,7 +26,7 @@ create table mensagem(
   hora timestamp -- pega data e hora
 );
 
---------------------alter table mensagem add status ENUM('L', 'N') default 'N';
+alter table mensagem add status ENUM('L', 'N') default 'N';
 
 --create table online(
   --usuario_id int references usuario(id),

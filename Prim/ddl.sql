@@ -43,6 +43,10 @@ create table mensagem(
   hora timestamp -- pega data e hora
 );
 
+alter table mensagem add tempo int;
+
+alter table mensagem drop column time;
+
 alter table mensagem add  conteudo varchar(255) not null;
 
 alter table mensagem add tipo ENUM('a', 'i', 't', 'v');

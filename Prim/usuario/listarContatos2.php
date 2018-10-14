@@ -66,7 +66,12 @@ $resultado = mysqli_query($conexao, $sql);
        <button name="tipo" value="a"> <a href="audio.php"><img src="../img/audio.png" height="20" width="20"/></a></button>  
        <button name="tipo" value="i"> <a href="imagem.php"><img src="../img/imagem.png" height="20" width="20"/></a></button>
        <button name="tipo" value="v"> <a href="video.php"><img src="../img/video.png" height="20" width="20"/></a></button>
-       <button name="tipo" value="tempo"> <a href="tempo.php"><img src="../img/time.png" height="20" width="20"/></a></button>
+       <select name="tempo"><img src="../img/time.png" height="20" width="20"/>
+           <option  value="2" selected>2s</option>
+           <option  value="5">5s</option>
+           <option  value="7">7s</option>
+           <option  value="10">10s</option>
+       </select>
        <span class="input-group-btn">
            <input type="hidden" id="id" name="id">
        <input type="submit" value="&rang; &rang;" class="btn btn-success">

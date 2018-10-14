@@ -40,36 +40,11 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 <td><br><br><?=$linha['hora']?></td>
             </tr>
             
-            <script>
-                
-                function cont(<?=$linha['id']?>) {
-    var txt;
-    if () {
-        delete();
-    } else {
-        
-    }
-    document.getElementById("demo").innerHTML = txt;
-}
-                
-                
-                
-function delete(<?=$linha['id']?>) {
-    var txt;
-    if (status=='N') {
-        <?php
-        $query = "delete from mensagem where id = $linha[id]";
-        mysqli_query($conexao, $query);
-        ?>
-    } else {
-        
-    }
-    document.getElementById("demo").innerHTML = txt;
-}
-
-</script>
+            
                 
             <?php
+            $query_mens="update mensagem set status = 'L' where id = $linha[id]";
+            mysqli_query($conexao, $query_mens);
 //            break;
 //            }else{
 //   
@@ -79,6 +54,26 @@ function delete(<?=$linha['id']?>) {
 ?>
 </table>
 </div>
+
+<script>                
+                
+        delete();
+               
+function delete(id) {
+    var txt;
+    
+    if (status=='L') {
+        $.ajax({
+        url: "delete_mens.php",
+        type: "POST",
+        data: "id";
+    })
+       
+    } 
+    document.getElementById("demo").innerHTML = txt;
+}
+
+</script>
 
 
 
