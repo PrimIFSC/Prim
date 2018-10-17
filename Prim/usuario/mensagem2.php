@@ -1,7 +1,7 @@
 <?php
 //session_start();
-include '../conectar.php';
-include '../cabe/cabecalho.php';
+//include '../conectar.php';
+//include '../cabe/cabecalho.php';
 //include './autenticar.php';
 
 $id_contato = $_GET['id'];
@@ -9,7 +9,7 @@ $nome = $_GET['nome'];
 //echo $id_contato;
 //echo $_SESSION[id];
 
-$sql = "select * from mensagem where mensagem.usuario_id=$id_contato and mensagem.contato_id=$_SESSION[id] or mensagem.contato_id=$id_contato and mensagem.usuario_id=$_SESSION[id] order by hora";
+$sql = "select * from mensagem where mensagem.usuario_id=button.data('id') and mensagem.contato_id=$_SESSION[id] or mensagem.contato_id=$id_contato and mensagem.usuario_id=$_SESSION[id] order by hora";
 $resultado = mysqli_query($conexao, $sql);  
 
 
