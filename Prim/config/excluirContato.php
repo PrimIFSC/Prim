@@ -4,7 +4,7 @@ include '../cabe/cabecalho.php';
 include '../conectar.php';
 
 ?>
-<div id="config"> 
+<div class="config"> 
     <h2>Excluir contato</h2><br>
 <?php
 

@@ -1,7 +1,7 @@
 <?php
 //session_start();
-//include '../conectar.php';
-//include '../cabe/cabecalho.php';
+include '../conectar.php';
+include '../cabe/cabecalho.php';
 //include './autenticar.php';
 
 $id_contato = $_GET['id'];
@@ -9,7 +9,7 @@ $nome = $_GET['nome'];
 //echo $id_contato;
 //echo $_SESSION[id];
 
-$sql = "select * from mensagem where mensagem.usuario_id=button.data('id') and mensagem.contato_id=$_SESSION[id] or mensagem.contato_id=$id_contato and mensagem.usuario_id=$_SESSION[id] order by hora";
+$sql = "select * from mensagem where mensagem.usuario_id=$id_contato and mensagem.contato_id=$_SESSION[id] and status='N' or mensagem.contato_id=$id_contato and mensagem.usuario_id=$_SESSION[id] and status='N' order by hora";
 $resultado = mysqli_query($conexao, $sql);  
 
 
@@ -17,7 +17,8 @@ $resultado = mysqli_query($conexao, $sql);
 //$resultado2 = mysqli_query($conexao, $sql2); 
 
 ?>
-<div id="config">
+
+<div class="config">
 <table id="mens">
     <tr>
     <td><br><h3><?=$nome?></h3></td>
@@ -27,6 +28,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
 //    while ($linha2 = mysqli_fetch_array($resultado2)) {
 //        if ($linha[id] == $linha2[id]) {
                 ?>
+    
             <tr>
                 <td><?php if ($linha['usuario_id']==$id_contato) { 
                     echo $nome;
@@ -43,8 +45,11 @@ while ($linha = mysqli_fetch_array($resultado)) {
             
                 
             <?php
+            
             $query_mens="update mensagem set status = 'L' where id = $linha[id]";
             mysqli_query($conexao, $query_mens);
+            $tempo = $linha['tempo'];
+            
 //            break;
 //            }else{
 //   
@@ -55,25 +60,20 @@ while ($linha = mysqli_fetch_array($resultado)) {
 </table>
 </div>
 
-<script>                
-                
-        delete();
-               
-function delete(id) {
-    var txt;
+<script>
     
-    if (status=='L') {
-        $.ajax({
-        url: "delete_mens.php",
-        type: "POST",
-        data: "id";
-    })
-       
-    } 
-    document.getElementById("demo").innerHTML = txt;
-}
-
-</script>
+         setTimeout(function mensagem(){ 
+                var msg = document.getElementsByClassName("config");
+                while(msg.length > 0){
+                    msg[0].remove(msg[0]);
+                }
+            }, <?=$tempo?>);
+        </script>
+    
+<?php
+$query_del="delete from mensagem where status='L'";
+        mysqli_query($conexao, $query_del);
+        ?>
 
 
 

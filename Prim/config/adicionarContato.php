@@ -1,7 +1,7 @@
 <?php
 include '../cabe/cabecalho.php';
 ?>
-<div id="config">
+<div class="config">
     <h2>Adicionar contato</h2><br>
 <form action="busca.php" method="post">
 <input type="search" name="busca">

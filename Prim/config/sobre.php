@@ -2,4 +2,4 @@
 include '../cabe/cabecalho.php';
 
 ?>
-<h2 id="config">Sobre</h2>
+<h2 class="config">Sobre</h2>

@@ -2,7 +2,7 @@
 include '../cabe/cabecalho.php';
 
 ?>
-<div id="config">
+<div class="config">
     <h2>Personalizar</h2><br>
 
 <h4>Alterar fundo</h4>

@@ -11,7 +11,7 @@
         
         ?>
         
-<div id="config">
+<div class="config">
     <h2 id="up">Editar perfil</h2><br>
         <form method="post" action="editar.php">
             <input type="hidden" name="id" value="<?= $id ?>">
