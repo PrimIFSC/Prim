@@ -12,7 +12,7 @@
     <?php
 //session_start();
 
-include '../conectar.php';
+//include '../conectar.php';
 
 $sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id
    where u.id = $_SESSION[id]";
@@ -41,7 +41,8 @@ $resultado = mysqli_query($conexao, $sql);
 
 <?php
     }
-    ?>
+    
+    ?>  
         </div>
           </div>
         </div>
@@ -59,13 +60,18 @@ $resultado = mysqli_query($conexao, $sql);
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p><form action="../usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
+          <p>
+              
+          <form action="../usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
         <div class="col-lg-12">
             <div class="input-group">
-                <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem" class="form-control"></textarea><br>
-       <button name="tipo" value="a"> <a href="audio.php"><img src="../img/audio.png" height="20" width="20"/></a></button>  
-       <button name="tipo" value="i"> <a href="imagem.php"><img src="../img/imagem.png" height="20" width="20"/></a></button>
-       <button name="tipo" value="v"> <a href="video.php"><img src="../img/video.png" height="20" width="20"/></a></button>
+       <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem" class="form-control"></textarea><br>
+       
+<!--       <button name="arquivo" type="file" value="a"><img src="../img/audio.png" height="20" width="20"/></a></button>  -->
+       <input name="arquivo" type="file">
+<!--       <input name="arquivo" type="file" value="a">
+       <input name="arquivo" type="file" value="v">-->
+<!--       <button name="arquivo" type="file" value="v"><img src="../img/video.png" height="20" width="20"/></a></button>-->
        <select name="tempo"><img src="../img/time.png" height="20" width="20"/>
            <option  value="2000" selected>2s</option>
            <option  value="5000">5s</option>

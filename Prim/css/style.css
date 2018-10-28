@@ -68,7 +68,7 @@ height: 100%;
 #conf ul {
     text-decoration: none;
     list-style-type: none;
-    width: 15%;
+    width: 20%;
     background-color: #f1f1f1;
     display: inline-block;
     color: #000;
@@ -96,6 +96,13 @@ height: 100%;
 }
 
 .config {
+    margin-top: 60px;
+    width: 88%;
+    padding-bottom: 20px;
+    margin-left: 43%;
+}
+
+#config {
     margin-top: 60px;
     width: 88%;
     padding-bottom: 20px;

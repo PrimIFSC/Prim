@@ -1,7 +1,7 @@
 <?php
 //session_start();
 include '../cabe/cabecalho.php';
-include '../conectar.php';
+//include '../conectar.php';
 
 ?>
 <div class="config"> 

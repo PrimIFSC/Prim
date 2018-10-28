@@ -1,6 +1,6 @@
 <?php
 //session_start();
-include '../conectar.php';
+//include '../conectar.php';
 include '../cabe/cabecalho.php';
 //include './autenticar.php';
 
@@ -18,6 +18,8 @@ $resultado = mysqli_query($conexao, $sql);
 
 ?>
 
+
+
 <div class="config">
 <table id="mens">
     <tr>
@@ -29,15 +31,29 @@ while ($linha = mysqli_fetch_array($resultado)) {
 //        if ($linha[id] == $linha2[id]) {
                 ?>
     
+    
+    
             <tr>
                 <td><?php if ($linha['usuario_id']==$id_contato) { 
                     echo $nome;
                             
                 }else{
                     echo $_SESSION['nome'];
+                    ?>
+                </td>
+                <?php
                             
-                }?></td>
-                <td><?=$linha['conteudo']?></td>
+                }if ($linha['tipo']!='t'){
+                    ?>
+                <img src="../upload/<?=$linha['conteudo']?>" width="200" height="200">
+                    <?php
+                }else                    
+                    if ($linha['tipo']=='t'){
+?>
+                <?=$linha['conteudo']?>
+                <?php
+                }
+                ?>
                 <td id="espaco"></td>
                 <td><br><br><?=$linha['hora']?></td>
             </tr>
@@ -49,6 +65,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
             $query_mens="update mensagem set status = 'L' where id = $linha[id]";
             mysqli_query($conexao, $query_mens);
             $tempo = $linha['tempo'];
+            
             
 //            break;
 //            }else{
@@ -66,14 +83,14 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 var msg = document.getElementsByClassName("config");
                 while(msg.length > 0){
                     msg[0].remove(msg[0]);
+                    
                 }
+//                document.getElementsByClassName("img").style.display = "none";
+                
             }, <?=$tempo?>);
         </script>
     
 <?php
-$query_del="delete from mensagem where status='L'";
+$query_del="delete from mensagem where status = 'L'";
         mysqli_query($conexao, $query_del);
         ?>
-
-
-

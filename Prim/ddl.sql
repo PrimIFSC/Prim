@@ -43,7 +43,16 @@ create table mensagem(
   hora timestamp -- pega data e hora
 );
 
+create table feedback(
+  id int primary key auto_increment,
+  assunto varchar(50),
+  comentario text,
+  usuario_id integer references usuario(id) 
+);
+
 alter table mensagem add tempo int;
+
+alter table mensagem add status ENUM('L', 'N') default 'N';
 
 alter table mensagem drop column time;
 
@@ -84,6 +93,9 @@ select nome from usuario where id = 10;
 
 select * from mensagem;
 select * from usuario;
+select * from feedback;
+
+insert into feedback (assunto, comentario, usuario_id) values ('aa', 'aaa', 2)
 
 --fazer a tabela mensagem com as coisas que tem no conteúdo
 

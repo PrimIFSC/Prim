@@ -3,7 +3,7 @@
         include '../cabe/cabecalho.php';
         ini_set('display_errors', TRUE);
         $id = $_SESSION['id'];
-        include '../conectar.php';
+//        include '../conectar.php';
         $sql = "select * from usuario where id = $id";
         $resultado = mysqli_query($conexao, $sql);
         

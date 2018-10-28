@@ -7,6 +7,7 @@ and open the template in the editor.
 <?php
 //include '../usuario/autenticar.php';
 session_start();
+include '../conectar.php';
         //$cor = $_POST['cor'];
         ?>
  
@@ -66,7 +67,7 @@ and open the template in the editor.
             </ul>
 	</div>
         <?php
-        // put your code here
+            
         ?>
         <div id="conf">
 <ul>

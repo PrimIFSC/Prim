@@ -1,22 +1,23 @@
 <?php
 include '../cabe/cabecalho.php';
 
+
 ?>
 <div class="config">
     <h2>Feedback</h2><br><br>
 
-<form method="post" action="comentFeedback.php">
+    <form method="post" action="comentFeedback.php">
     
 <input type="radio" name="optFeedback" value="sugestao" checked>Sugestão
 <input type="radio" name="optFeedback" value="problema">Problema<br><br><br>
         
             Assunto: <input type="text" name="assunto"><br><br><br>
-            Seu feedback: <textarea name="feedback"></textarea><br><br><br>
-            <input id="env" type="submit" value="Enviar"<button onclick="myFunction4()"></button>
+            Seu feedback: <textarea name="mensagem"></textarea><br><br><br>
+            <input id="env" type="submit" value="Enviar">
         </form>
 <p id="demo"></p>
 
-<script>
+<!--<script>
 function myFunction4() {
     var txt;
     if (confirm("Deseja enviar o feedback?")) {
@@ -26,6 +27,6 @@ function myFunction4() {
     }
     document.getElementById("demo").innerHTML = txt;
 }
-</script>
+</script>-->
 
 </div>

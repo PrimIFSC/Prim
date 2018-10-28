@@ -1,11 +1,25 @@
-<?php
+<?php 
+session_start();
+//include '../conectar.php'; 
+//require '../PHPMailer/PHPMailerAutoload.php';
+include '../PHPMailer/Email.php';
 
+//já tem certinho ali
 $botao = $_POST['optFeedback'];
 $assunto = $_POST['assunto'];
-$feedback = $_POST['feedback'];
+$mensagem = $_POST['mensagem'];
+$destinatario = "primifsc@gmail.com";
+$usuario_id = $_SESSION['id'];
 
-$email = "primifsc@gmail.com";
+$query = "insert into feedback (assunto, comentario, usuario_id) values ('$assunto', '$mensagem', $usuario_id)";
+mysqli_query($conexao, $query);
 
-mail($email, $assunto, $feedback);
+ $email = new Email();
+ $email->enviarEmail($destinatario, $assunto, $mensagem);
+ 
+	 		  
+header('Location: feedback.php'); 
+	 		   
+//teste
+//$comentário = $comentário + $_session['email'];
 
-header('Location: feedback.php');

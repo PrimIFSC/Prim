@@ -1,6 +1,6 @@
 <?php
 //session_start();
-include '../conectar.php';
+//include '../conectar.php';
 include '../cabe/cabecalho.php';
 
 $busca = $_POST['busca'];
