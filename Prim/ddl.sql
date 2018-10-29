@@ -54,7 +54,7 @@ alter table mensagem add tempo int;
 
 alter table mensagem add status ENUM('L', 'N') default 'N';
 
-alter table mensagem drop column time;
+
 
 alter table mensagem add  conteudo varchar(255) not null;
 
@@ -94,6 +94,8 @@ select nome from usuario where id = 10;
 select * from mensagem;
 select * from usuario;
 select * from feedback;
+
+insert into mensagem (usuario_id, contato_id, hora, conteudo, tipo, tempo) values (2, 3, NOW(), 'ioi', 't', '2000')
 
 insert into feedback (assunto, comentario, usuario_id) values ('aa', 'aaa', 2)
 

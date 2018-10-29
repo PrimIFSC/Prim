@@ -10,9 +10,9 @@
 </head>
 <body>
     <?php
-//session_start();
+session_start();
 
-//include '../conectar.php';
+include '../conectar.php';
 
 $sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id
    where u.id = $_SESSION[id]";
@@ -60,7 +60,7 @@ $resultado = mysqli_query($conexao, $sql);
           <h4 class="modal-title"></h4>
         </div>
         <div class="modal-body">
-          <p>
+          
               
           <form action="../usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
         <div class="col-lg-12">
@@ -84,7 +84,7 @@ $resultado = mysqli_query($conexao, $sql);
        </span>
        </div>
         </div>
-    </form> </p>
+    </form> 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

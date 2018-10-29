@@ -36,12 +36,13 @@ if ($mensagem == !null){
         
         $sql_up = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tempo) values ('$id_usuario', '$id_contato', NOW(), '$novo_nome', '$tempo')";
         
-        if(mysqli_query($conexao, $sql_up))
+        if(mysqli_query($conexao, $sql_up)){
             $msg = "Arquivo enviado com sucesso!";
-        else
+        }else{
              $msg = "Falha ao enviar arquivo";        
             
         }
+    }
         
 
 //                  if ($msg!=false){
@@ -54,6 +55,6 @@ if ($mensagem == !null){
 //echo $id_contato;
 //echo $tipo;
 
-
+//echo $mensagem;
 
 header("Location: ../pagina/principal.php");

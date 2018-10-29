@@ -33,24 +33,26 @@ while ($linha = mysqli_fetch_array($resultado)) {
     
     
     
-            <tr>
+    <tr class="<?=$linha['id']?>">
                 <td><?php if ($linha['usuario_id']==$id_contato) { 
                     echo $nome;
-                            
+                ?>
+                    <br>
+                    <?php
                 }else{
                     echo $_SESSION['nome'];
                     ?>
-                </td>
+                </td><br>
                 <?php
                             
                 }if ($linha['tipo']!='t'){
                     ?>
-                <img src="../upload/<?=$linha['conteudo']?>" width="200" height="200">
+                <td><br><img src="../upload/<?=$linha['conteudo']?>" width="200" height="200"></td>
                     <?php
                 }else                    
                     if ($linha['tipo']=='t'){
 ?>
-                <?=$linha['conteudo']?>
+                <td><br><?=$linha['conteudo']?></td>
                 <?php
                 }
                 ?>
@@ -58,6 +60,9 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 <td><br><br><?=$linha['hora']?></td>
             </tr>
             
+            <script>
+    mensagem();
+    </script>
             
                 
             <?php
@@ -71,16 +76,11 @@ while ($linha = mysqli_fetch_array($resultado)) {
 //            }else{
 //   
 //}
-}
-//}
-?>
-</table>
-</div>
-
+            ?>
 <script>
     
          setTimeout(function mensagem(){ 
-                var msg = document.getElementsByClassName("config");
+                var msg = document.getElementsByClassName("<?=$linha['id']?>");
                 while(msg.length > 0){
                     msg[0].remove(msg[0]);
                     
@@ -89,6 +89,15 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 
             }, <?=$tempo?>);
         </script>
+        
+        <?php
+}
+//}
+?>
+</table>
+</div>
+
+
     
 <?php
 $query_del="delete from mensagem where status = 'L'";
