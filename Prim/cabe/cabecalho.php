@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <?php
 //include '../usuario/autenticar.php';
-session_start();
+include '../usuario/autenticar.php';
 include '../conectar.php';
         //$cor = $_POST['cor'];
         ?>
@@ -76,7 +71,6 @@ and open the template in the editor.
         <li><a href="../config/adicionarContato.php">Adicionar contato</a></li>
         <li><a href="../config/excluirContato.php">Excluir contato</a></li>
         <li><a href="../config/personalizar.php">Personalizar</a></li>
-        <li><a href="../config/sobre.php">Sobre</a></li>
         <li><a href="../config/feedback.php">Feedback</a></li>
         <li><button id="sair" onclick="myFunction()">Sair</button></li>
 </ul>

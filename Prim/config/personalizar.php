@@ -9,7 +9,9 @@ include '../cabe/cabecalho.php';
 <br>
 
 <div id="per">
-<a href="galeria.php"><img src="../img/galeria.jpg" height="40"><br>Galeria</a><br>
+    <form action="galeria.php">
+<input name="arquivo" type="file"><br>
+    </form>
 <a href="cor.php"><img src="../img/cor.png" height="40"><br>Cores</a>
 </div>
 

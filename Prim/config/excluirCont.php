@@ -1,4 +1,5 @@
 <?php
+include '../usuario/autenticar.php';
 
 $id = $_GET['id'];
 

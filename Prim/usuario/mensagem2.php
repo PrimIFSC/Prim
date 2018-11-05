@@ -60,9 +60,9 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 <td><br><br><?=$linha['hora']?></td>
             </tr>
             
-            <script>
+<!--            <script>
     mensagem();
-    </script>
+    </script>-->
             
                 
             <?php
@@ -70,12 +70,6 @@ while ($linha = mysqli_fetch_array($resultado)) {
             $query_mens="update mensagem set status = 'L' where id = $linha[id]";
             mysqli_query($conexao, $query_mens);
             $tempo = $linha['tempo'];
-            
-            
-//            break;
-//            }else{
-//   
-//}
             ?>
 <script>
     
@@ -92,8 +86,11 @@ while ($linha = mysqli_fetch_array($resultado)) {
         
         <?php
 }
+
 //}
+        
 ?>
+        
 </table>
 </div>
 

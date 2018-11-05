@@ -1,5 +1,5 @@
 <?php 
-session_start();
+include '../usuario/autenticar.php';
 //include '../conectar.php'; 
 //require '../PHPMailer/PHPMailerAutoload.php';
 include '../PHPMailer/Email.php';

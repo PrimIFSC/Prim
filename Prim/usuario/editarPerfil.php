@@ -15,7 +15,7 @@
     <h2 id="up">Editar perfil</h2><br>
         <form method="post" action="editar.php">
             <input type="hidden" name="id" value="<?= $id ?>">
-            <a id="confi" href="alterarFoto.php"><img src="../img/fotoCont.png" height="70" width="70"/></a><br><br>
+            <input id="confi" name="arquivo" type="file"><img src="../img/fotoCont.png" height="70" width="70"/><br><br>
             <h3 id="confi">Informações pessoais</h3>
             Nome: <input type="text" name="nome" value="<?= $linha['nome'] ?>"><br><br>
             <h3 id="confi">Informações de contato</h3>

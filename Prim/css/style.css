@@ -120,7 +120,7 @@ height: 100%;
     margin-top: 60px;
     width: 88%;
     padding-bottom: 20px;
-    margin-left: 20%;
+    margin-left: 18%;
 }
 
 #confi {
@@ -229,4 +229,9 @@ height: 100%;
 
 #espaco{
     width: 50%;
+}
+
+#busc{
+    float: right;
+    margin-right: 18%;
 }

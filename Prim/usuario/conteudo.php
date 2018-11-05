@@ -1,5 +1,5 @@
 <?php
-session_start();
+include './autenticar.php';
 include '../conectar.php';
 
 $id_usuario = $_SESSION['id'];

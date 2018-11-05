@@ -1,6 +1,6 @@
 <?php
-include './autenticar.php';
 include '../conectar.php';
+include './autenticar.php';
 
 ini_set("display_errors", true);
 

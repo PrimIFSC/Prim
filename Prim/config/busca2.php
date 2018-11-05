@@ -1,55 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <?php
-//include './autenticar.php';
-
+<?php
+//session_start();
 //include '../conectar.php';
+include '../cabe/cabecalho.php';
 
-$sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id
-   where u.id = $_SESSION[id]";
+$busca = $_POST['busca'];
 
-$resultado = mysqli_query($conexao, $sql);
-?>
-<link type="text/css" rel="stylesheet" href="../css/style.css">
-<div id="config3">
+$busca_query = "SELECT * FROM usuario WHERE nome or email LIKE '%$busca%' and id != $_SESSION[id]";
+$sql = "select * from lista where usuario_id=$_SESSION[id]";
+
+$resultado = mysqli_query($conexao, $busca_query);
+$resultado_sql = mysqli_query($conexao, $sql);
+
+while ($linha = mysqli_fetch_array($resultado)) { 
+    while ($linha_sql = mysqli_fetch_array($resultado_sql)) {
+            if ($linha['id'] == $linha_sql['contato_id']) {
+                $contato = true;
+                break;                
+            } else {
+                $contato = false;                
+            }
+        }        
+        mysqli_free_result($resultado_sql);
+        $resultado_sql = mysqli_query($conexao, $sql);
+        ?>
+            <?php
+            if ($contato) {
+                ?>
+  
+  <link type="text/css" rel="stylesheet" href="../css/style.css">
+  <div id="config3">
     <div class="container">
         <div class="row">
           <div class="col-md-6 col-md-offset 3">
             <center> 
         <div id="content">
-             
-        <table>
-    <?php
-    while ($linha = mysqli_fetch_array($resultado)) {
-        ?>
-    
-        <tr>
-            <img src="../img/user.svg" height="80" width="80">
+
+<table>
+    <tr>
+               <th id="list"><img src="../img/user.svg" height="60" width="60"></th>
         </tr>
         <tr>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
-        </tr>  
-
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
+        </tr>
+</table>
 <?php
-    }
-    
-    ?>  
+}
+}
+?>
         </div>
           </div>
         </div>
-  <!-- Trigger the modal with a button -->
-  
-
-  <!-- Modal -->
+<!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -105,9 +110,3 @@ $resultado = mysqli_query($conexao, $sql);
   modal.find('.modal-body #id').val(id)
 })
 </script>
-
-
-
-</table>
-</body>
-</html>
