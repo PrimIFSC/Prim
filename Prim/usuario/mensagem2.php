@@ -2,6 +2,7 @@
 //session_start();
 //include '../conectar.php';
 include '../cabe/cabecalho.php';
+include './timer.php';
 //include './autenticar.php';
 
 $id_contato = $_GET['id'];
@@ -58,6 +59,8 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 ?>
                 <td id="espaco"></td>
                 <td><br><br><?=$linha['hora']?></td>
+                
+                
             </tr>
             
 <!--            <script>
@@ -83,6 +86,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 
             }, <?=$tempo?>);
         </script>
+        
         
         <?php
 }

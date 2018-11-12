@@ -12,10 +12,8 @@
     <?php
 //include './autenticar.php';
 
-//include '../conectar.php';
 
-$sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id
-   where u.id = $_SESSION[id]";
+$sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id where u.id = $_SESSION[id]";
 
 $resultado = mysqli_query($conexao, $sql);
 ?>
