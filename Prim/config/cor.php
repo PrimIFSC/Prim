@@ -2,16 +2,19 @@
 include '../cabe/cabecalho.php';
 
 ?>
-
-    <button class="button " onclick="green()"></button>
-    <button class="button button2" onclick="blue()"></button>
-    <button class="button button3" onclick="red()"></button>
-    <button class="button button4" onclick="gray()"></button>
-    <button class="button button5" onclick="black()"></button>
-    <button class="button button6" onclick="plum()"></button>
-    <button class="button button7" onclick="orange()"></button>
-    <form action="../mudarCor.php" method="post"> 
-        
+<body>
+    <form action="../mudarCor.php" method="post">    
+        <select name="cor">
+        <option <button value="#4CAF50" class="button " onclick="green()"></option>
+        <option <button value="#008CBA" class="button button2" onclick="blue()"></option>
+        <option <button value="#f44336" class="button button3" onclick="red()"></option>
+        <option <button value="#e7e7e7" class="button button4" onclick="gray()"></option>
+        <option <button value="#555555" class="button button5" onclick="black()"></option>
+        <option <button value="#DDA0DD" class="button button6" onclick="plum()"></option>
+        <option <button value="#ffa500" class="button button7" onclick="orange()"></option>  
+        </select>
+    <button type="submit">Salvar</button>
+    </form>   
 
 
 <style>
@@ -39,55 +42,32 @@ include '../cabe/cabecalho.php';
 <script>
 function green() {
     document.body.style.backgroundColor = "#4CAF50";
-    <?php
-    $cor = "#4CAF50";
-    ?>
 }
 
 function blue() {
     document.body.style.backgroundColor = "#008CBA";
-    <?php
-    $cor = "#008CBA";
-    ?>
 }
 
 function red() {
     document.body.style.backgroundColor = "#f44336";
-    <?php
-    $cor = "#f44336";
-    ?>
 }
 
 function gray() {
     document.body.style.backgroundColor = "#e7e7e7";
-    <?php
-    $cor = "#e7e7e7";
-    ?>
 }
 
 function black() {
     document.body.style.backgroundColor = "#555555";
-    <?php
-    $cor = "#555555";
-    ?>
 }
 
 function plum() {
     document.body.style.backgroundColor = "#DDA0DD";
-    <?php
-    $cor = "#DDA0DD";
-    ?>
 }
 
 function orange() {
     document.body.style.backgroundColor = "#ffa500";
-    <?php
-    $cor = "#ffa500";
-    ?>
 }
 
 </script>
 
-<input type="hidden" name="cor" value="<?=$cor?>">    
-    <button type="submit">Salvar</button>
-    </form>
+</body>

@@ -31,23 +31,23 @@ if ($mensagem == !null){
         
         $_UP['extensoes_aud'] = array('mp3', 'wma', 'aac', 'wav');
         
-        $_UP['extensoes_vid'] = array('avi', 'mpeg', 'mov', 'mp4', 'mkv', '3gpp');
+        $_UP['extensoes_vid'] = array('mp4', 'mpeg', 'mov', 'avi', 'mkv', '3gpp');
         
         $_UP['renomeia'] = false;
         
         
         if (array_search($extensao, $_UP['extensoes_vid']) != false){
-        $sql_up = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tempo) values ('$id_usuario', '$id_contato', NOW(), '$novo_nome', 'v', '$tempo')";    
+        $sql_up = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tipo, tempo) values ('$id_usuario', '$id_contato', NOW(), '$novo_nome', 'v', '$tempo')";    
         mysqli_query($conexao, $sql_up);
         
-        }
+        }else
         if (array_search($extensao, $_UP['extensoes_aud']) != false){
-        $sql_up2 = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tempo) values ('$id_usuario', '$id_contato', NOW(), '$novo_nome', 'a', '$tempo')";
+        $sql_up2 = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tipo, tempo) values ('$id_usuario', '$id_contato', NOW(), '$novo_nome', 'a', '$tempo')";
         mysqli_query($conexao, $sql_up2);
         
-        }
+        }else
         if (array_search($extensao, $_UP['extensoes_img']) != false){
-        $sql_up3 = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tempo) values ('$id_usuario', '$id_contato', NOW(), '$novo_nome', 'i', '$tempo')";
+        $sql_up3 = "insert into mensagem (usuario_id, contato_id, hora, conteudo, tipo, tempo) values ('$id_usuario', '$id_contato', NOW(), '$novo_nome', 'i', '$tempo')";
         mysqli_query($conexao, $sql_up3); 
         }
         else{
