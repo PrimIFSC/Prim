@@ -1,10 +1,18 @@
-
 <?php
-//include '../usuario/autenticar.php';
 include '../usuario/autenticar.php';
 include '../conectar.php';
-        //$cor = $_POST['cor'];
+$query = "select * from fundo where usuario_id = $_SESSION[id]";
+$result2 = mysqli_query($conexao, $query);
+while ($linha = mysqli_fetch_array($result2)){
         ?>
+<style>
+
+        document.body.style.backgroundColor: <?=$linha['cor']?>
+
+</style>
+<?php
+}
+?>
  
 
 <!DOCTYPE html>
@@ -49,7 +57,7 @@ and open the template in the editor.
           </div>
       </div>-->
 <?php
-$sql = "select * from noticacoes where usuario_id = $_SESSION[id] or contato_id = $_SESSION[id]";
+$sql = "select * from noticacoes where usuario_id = $_SESSION[id] or contato_id = $_SESSION[id] and status='N'";
 $result = mysqli_query($conexao, $sql);
 ?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -65,7 +73,7 @@ $result = mysqli_query($conexao, $sql);
                 <li id="user"><a href="../usuario/editarPerfil.php"><?=$_SESSION['nome']?></a></li>
                 <li id="user2"><a href="../usuario/receber.php" class="notification">
   <span><i class="material-icons">notifications</i></span>
-  <span class="badge"><?= count($result)?></span>
+  <span class="badge"><?=count($result)?></span>
 </a></li>
                 
             </ul>
@@ -81,7 +89,7 @@ $result = mysqli_query($conexao, $sql);
         <li><a href="../config/excluirContato.php">Excluir contato</a></li>
         <li><a href="../config/personalizar.php">Personalizar</a></li>
         <li><a href="../config/feedback.php">Feedback</a></li>
-        <li><button id="sair" onclick="myFunction()">Sair</button></li>
+        <li><a id="sair" onclick="myFunction()">Sair</a></li>
 </ul>
 </div>
 

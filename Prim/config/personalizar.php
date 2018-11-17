@@ -2,6 +2,7 @@
 include '../cabe/cabecalho.php';
 
 ?>
+<body>
 <div class="config">
     <h2>Personalizar</h2><br>
 
@@ -51,3 +52,4 @@ include '../cabe/cabecalho.php';
 <input id="ok" type="submit" value="Ok">
 
 </div>
+</body>

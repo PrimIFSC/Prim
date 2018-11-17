@@ -50,12 +50,29 @@ create table feedback(
   usuario_id integer references usuario(id) 
 );
 
+--criado agora, adicionar no site
 create table notificacoes(
  id int primary key auto_increment,
  usuario_id integer references usuario(id),
  contato_id integer references contato(id),
  mensagem_id integer references mensagem(id)
 );
+
+create table fundo(
+ usuario_id int references usuario(id),
+ foto varchar(255),
+ fundo varchar(255),
+ primary key(usuario_id)
+);
+
+alter table fundo add cor varchar(50);
+alter table fundo add imagem varchar(255);
+alter table fundo drop column fundo;
+
+select * from fundo
+select * from notificacoes
+
+alter table notificacoes add status ENUM('L', 'N') default 'N';
 
 alter table mensagem add tempo int;
 
