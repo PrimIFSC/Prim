@@ -36,7 +36,7 @@ function myFunction3() {
     document.getElementById("demo").innerHTML = txt;
 }
 </script>
-        
+       <a href="timer.php">Timer</a> 
     </body>
 </html>
 
