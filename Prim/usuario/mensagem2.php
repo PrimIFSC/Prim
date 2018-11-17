@@ -44,17 +44,26 @@ while ($linha = mysqli_fetch_array($resultado)) {
                     ?>
                 </td><br>
                 <?php
-                            
-                }if ($linha['tipo']!='t'){
-                    ?>
-                <td><br><img src="../upload/<?=$linha['conteudo']?>" width="200" height="200"></td>
-                    <?php
-                }else                    
-                    if ($linha['tipo']=='t'){
+                }if ($linha['tipo']=='t'){
 ?>
                 <td><br><?=$linha['conteudo']?></td>
                 <?php
-                }
+                }if ($linha['tipo']=='i'){
+                    ?>
+                <td><br><img src="../upload/<?=$linha['conteudo']?>" width="200" height="200"></td>
+                    <?php
+                }if ($linha['tipo']=='a'){
+                    ?>
+                <audio autoplay="autoplay" controls="controls">
+                <source src="../upload/<?=$linha['conteudo']?>" type="audio/mp3" />
+                    <?php
+                }if ($linha['tipo']=='v'){
+                    ?>
+                <video width="320" height="240" controls="controls">
+                <source src="../upload/<?=$linha['conteudo']?>" type="video/mp4">
+                    <?php
+                }                     
+                    
                 ?>
                 <td id="espaco"></td>
                 <td><br><br><?=$linha['hora']?></td>
@@ -85,7 +94,13 @@ while ($linha = mysqli_fetch_array($resultado)) {
         </script>
         
         <?php
-}
+        $query_del="delete from mensagem where id = $linha[id]";
+        mysqli_query($conexao, $query_del);
+        $query_not="insert into notificacoes (contato_id, usuario_id, mensagem_id) values ($linha[contato_id], $linha[usuario_id], $linha[id])";
+        mysqli_query($conexao, $query_not);
+        
+                    }
+
 
 //}
         
@@ -97,6 +112,5 @@ while ($linha = mysqli_fetch_array($resultado)) {
 
     
 <?php
-$query_del="delete from mensagem where status = 'L'";
-        mysqli_query($conexao, $query_del);
+
         ?>

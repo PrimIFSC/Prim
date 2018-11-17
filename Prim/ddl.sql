@@ -50,6 +50,13 @@ create table feedback(
   usuario_id integer references usuario(id) 
 );
 
+create table notificacoes(
+ id int primary key auto_increment,
+ usuario_id integer references usuario(id),
+ contato_id integer references contato(id),
+ mensagem_id integer references mensagem(id)
+);
+
 alter table mensagem add tempo int;
 
 alter table mensagem add status ENUM('L', 'N') default 'N';
@@ -94,12 +101,15 @@ select nome from usuario where id = 10;
 select * from mensagem;
 select * from usuario;
 select * from feedback;
+select * from notificacoes
 
 insert into mensagem (usuario_id, contato_id, hora, conteudo, tipo, tempo) values (2, 3, NOW(), 'ioi', 't', '2000')
 
 insert into feedback (assunto, comentario, usuario_id) values ('aa', 'aaa', 2)
 
 --fazer a tabela mensagem com as coisas que tem no conteúdo
+
+select * from notificacoes
 
 select usuario.nome, mensagem.hora, mensagem.conteudo, mensagem.usuario_id, mensagem.contato_id from mensagem join usuario on mensagem.contato_id=4 and mensagem.usuario_id=3 and mensagem.usuario_id=usuario.id
 

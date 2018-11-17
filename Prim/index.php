@@ -30,7 +30,7 @@ and open the template in the editor.
      
              <?php
              include './usuario/form_login.php';
-             require './PHPMailer/PHPMailerAutoload.php';
+             //require './PHPMailer/PHPMailerAutoload.php';
              ?>
         
 

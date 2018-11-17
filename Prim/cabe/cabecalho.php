@@ -20,6 +20,8 @@ and open the template in the editor.
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!--<title>Bootstrap 101 Template</title>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -46,7 +48,10 @@ and open the template in the editor.
             </center>
           </div>
       </div>-->
-
+<?php
+$sql = "select * from noticacoes where usuario_id = $_SESSION[id] or contato_id = $_SESSION[id]";
+$result = mysqli_query($conexao, $sql);
+?>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     
@@ -58,7 +63,11 @@ and open the template in the editor.
                 <li id="co"><img src="../img/config.png" height="35" width="35" onclick="prim()" /></li>	
                 <li id="prim"><a href="../pagina/principal.php">PRIM</a></li>
                 <li id="user"><a href="../usuario/editarPerfil.php"><?=$_SESSION['nome']?></a></li>
-                <li id="user2"><a href="../usuario/receber.php"><img src="../img/not.png" height="30" width="30"/></a></li>
+                <li id="user2"><a href="../usuario/receber.php" class="notification">
+  <span><i class="material-icons">notifications</i></span>
+  <span class="badge"><?= count($result)?></span>
+</a></li>
+                
             </ul>
 	</div>
         <?php
