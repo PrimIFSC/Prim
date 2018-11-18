@@ -10,8 +10,10 @@ include '../cabe/cabecalho.php';
 <br>
 
 <div id="per">
-    <form action="galeria.php">
-<input name="arquivo" type="file"><br>
+    <form action="galeria.php" method="post">
+<input name="fundo" type="file"><br>
+<input type="submit" value="Salvar">
+    
     </form>
 <a href="cor.php"><img src="../img/cor.png" height="40"><br>Cores</a>
 </div>
