@@ -53,7 +53,9 @@ background-color: <?=$linha['cor']?>
 </style>
 <?php
     }
-    ?>
+    
+}
+?>
 
   </head>
   <body>
@@ -127,7 +129,5 @@ function prim() {
 }
 </script>
   </body>
-  <?php
-}
-?>
+  
 </html>
