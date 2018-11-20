@@ -95,6 +95,10 @@ height: 100%;
     padding: 20px;
 }
 
+#sair:hover{
+    cursor: pointer;
+}
+
 .config {
     margin-top: 60px;
     width: 88%;

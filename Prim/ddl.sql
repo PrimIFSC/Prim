@@ -135,3 +135,13 @@ select usuario.nome, usuario.id, mensagem.hora, mensagem.conteudo, mensagem.usua
 select usuario.nome, usuario.id, mensagem.hora, mensagem.conteudo, mensagem.usuario_id, mensagem.contato_id from mensagem join usuario on mensagem.usuario_id=usuario.id and mensagem.usuario_id=3 where mensagem.contato_id=4
 
 select usuario.nome, mensagem.hora, mensagem.conteudo from mensagem join usuario on mensagem.usuario_id=usuario.id where mensagem.usuario_id=3 and mensagem.contato_id=4
+
+--usuários
+INSERT INTO `usuario` (`nome`, `email`, `senha`) VALUES
+('Beatriz', 'beatriz@gmail.com', '123'),
+('José', 'jose@gmail.com', '123'),
+('Ana', 'ana@gmail.com', '123');
+('Thiago', 'thiago@gmail.com', '123');
+
+insert into `lista` (`usuario_id`, `contato_id`) VALUES
+(1, 2);

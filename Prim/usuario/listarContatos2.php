@@ -66,10 +66,8 @@ $resultado = mysqli_query($conexao, $sql);
        <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem" class="form-control"></textarea><br>
        
 <!--       <button name="arquivo" type="file" value="a"><img src="../img/audio.png" height="20" width="20"/></a></button>  -->
-       <input name="arquivo" type="file">
-<!--       <input name="arquivo" type="file" value="a">
-       <input name="arquivo" type="file" value="v">-->
-<!--       <button name="arquivo" type="file" value="v"><img src="../img/video.png" height="20" width="20"/></a></button>-->
+       
+       <span class="btn btn-default btn-file"><span><img src="../img/galeria.png" height="40"></span><input type="file" name="arquivo" hidden accept="image/png, image/jpeg"></span>
        <select name="tempo"><img src="../img/time.png" height="20" width="20"/>
            <option  value="2000" selected>2s</option>
            <option  value="5000">5s</option>
