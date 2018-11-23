@@ -13,12 +13,6 @@ and open the template in the editor.
         
         <?php 
         include '../cabe/cabecalho.php';
-        ?>
-        <form id="busc" action="../config/busca2.php" method="post">
-<input type="search" name="busca">
-<input type="submit" value="Buscar">
-</form>
-        <?PHP
         include '../usuario/listarContatos2.php';
 
         ?>

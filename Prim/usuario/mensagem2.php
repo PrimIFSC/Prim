@@ -6,13 +6,17 @@ include './timer.php';
 //include './autenticar.php';
 
 $id_contato = $_GET['id'];
-$nome = $_GET['nome'];
+
 //echo $id_contato;
 //echo $_SESSION[id];
 
 $sql = "select * from mensagem where mensagem.usuario_id=$id_contato and mensagem.contato_id=$_SESSION[id] and status='N' or mensagem.contato_id=$id_contato and mensagem.usuario_id=$_SESSION[id] and status='N' order by hora";
 $resultado = mysqli_query($conexao, $sql);  
 
+
+$sql2 = "select nome from usuario where id = $id_contato";
+$resultado2 = mysqli_query($conexao, $sql2);
+$linha2= mysqli_fetch_array($resultado2);
 
 //$sql2 = "select * from mensagem where mensagem.contato_id=$_SESSION[id]";
 //$resultado2 = mysqli_query($conexao, $sql2); 
@@ -24,10 +28,11 @@ $resultado = mysqli_query($conexao, $sql);
 <div class="config">
 <table id="mens">
     <tr>
-    <td><br><h3><?=$nome?></h3></td>
+    <td><br><h3><?=$linha2['nome']?></h3></td>
     </tr>
     <?php    
-while ($linha = mysqli_fetch_array($resultado)) {    
+while ($linha = mysqli_fetch_array($resultado)) { 
+    
 //    while ($linha2 = mysqli_fetch_array($resultado2)) {
 //        if ($linha[id] == $linha2[id]) {
                 ?>
@@ -36,7 +41,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
     
     <tr class="<?=$linha['id']?>">
                 <td><?php if ($linha['usuario_id']==$id_contato) { 
-                    echo $nome;
+                    echo $linha2['nome'];
                 ?>
                     <br>
                     <?php
@@ -98,14 +103,24 @@ while ($linha = mysqli_fetch_array($resultado)) {
         
         
         <?php
+        if(!isset($contato_id)){
+            if ($linha['contato_id'] != $_SESSION['id']){
+                $contato_id= $linha['contato_id'];
+            }else{
+                $contato_id = $linha['usuario_id'];
+            }
+        }
         $query_del="delete from mensagem where id = $linha[id]";
         mysqli_query($conexao, $query_del);
+        
         $query_not="insert into notificacoes (contato_id, usuario_id, mensagem_id) values ($linha[contato_id], $linha[usuario_id], $linha[id])";
         mysqli_query($conexao, $query_not);
         
                     }
-
-
+         if(isset($contato_id)){       
+            $query_not_up="update notificacoes set status = 'L' where contato_id = $_SESSION[id] and usuario_id=$contato_id";
+            mysqli_query($conexao, $query_not_up);
+         }
 //}
         
 ?>
