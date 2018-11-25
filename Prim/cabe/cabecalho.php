@@ -22,6 +22,7 @@ and open the template in the editor.
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <link href="css/style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Bootstrap -->
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
@@ -68,7 +69,7 @@ background-color:
   <div class="w3-bar w3-light-grey">
       <div class="w3-dropdown-click">
       <button class="w3-button" onclick="prim()">
-     <a href="#" class="w3-bar-item w3-button"><img src="../img/config.png" width="20" style="margin: 10px 0;"/></a>
+     <a href="#" class="w3-bar-item w3-button"><img src="../img/config.png" width="20" style="margin: 1px 0;"/></a>
       </button>
       <div id="conf" class="w3-dropdown-content w3-bar-block w3-card w3-light-grey">
           <ul>
@@ -76,7 +77,6 @@ background-color:
         <li><a class="w3-bar-item w3-button" href="../usuario/editarPerfil.php">Editar perfil</a></li>
         <li><a class="w3-bar-item w3-button" href="../config/adicionarContato.php">Adicionar contato</a></li>
         <li><a class="w3-bar-item w3-button" href="../config/excluirContato.php">Excluir contato</a></li>
-        <li><a class="w3-bar-item w3-button" href="../config/personalizar.php">Personalizar</a></li>
         <li><a class="w3-bar-item w3-button" href="../config/feedback.php">Feedback</a></li>
         <li><a class="w3-bar-item w3-button" id="sair" onclick="myFunction()">Sair</a></li>
 </ul>
@@ -117,7 +117,7 @@ $result = mysqli_query($conexao, $sql);
     </div>
     <form id="busc" action="../config/busca2.php" method="post">
         <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search.." name="busca">
-        <label for="submit"><a class="w3-bar-item w3-button" style="padding: 12px;"><i class="fa fa-search"></i></a></label><input type="submit" value="" id="submit" name="submit" hidden="">
+        <label for="submit"><a class="w3-bar-item w3-button" style="padding: 10px;"><i class="fa fa-search"></i></a></label><input type="submit" value="" id="submit" name="submit" hidden="">
     </form>
   </div>
           

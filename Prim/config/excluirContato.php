@@ -1,11 +1,12 @@
 <?php
 //session_start();
-include '../cabe/cabecalho.php';
+include '../pagina/principal.php';
 //include '../conectar.php';
 
 ?>
-<div class="config"> 
-    <h2>Excluir contato</h2><br>
+<div id="edit">
+ 
+    <h3>Excluir contato</h3><br>
 <?php
 
 $sql = "select c.id, c.nome from usuario u join lista on u.id=lista.usuario_id join usuario c on c.id=lista.contato_id
@@ -27,6 +28,8 @@ $resultado = mysqli_query($conexao, $sql);
     <?php
 }
 ?>
+</table>
+
 <p id="demo"></p>
 
 <script>
@@ -42,3 +45,4 @@ function myFunction2(id) {
 </script>
 </table>
 </div>
+

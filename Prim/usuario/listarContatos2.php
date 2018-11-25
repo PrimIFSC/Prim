@@ -19,10 +19,8 @@ $resultado = mysqli_query($conexao, $sql);
 ?>
 <link type="text/css" rel="stylesheet" href="../css/style.css">
 <div id="config3">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-md-offset 3">
-            <center> 
+
+     
         <div id="content">
              
         <table>
@@ -34,16 +32,17 @@ $resultado = mysqli_query($conexao, $sql);
             <img src="../img/user.svg" height="80" width="80">
         </tr>
         <tr>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
-        </tr>  
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
+        </tr> 
+       
 
 <?php
     }
     
-    ?>  
+    ?> 
+         </table>
         </div>
-          </div>
-        </div>
+         
   <!-- Trigger the modal with a button -->
   
 

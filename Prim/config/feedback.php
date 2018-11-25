@@ -1,10 +1,11 @@
 <?php
-include '../cabe/cabecalho.php';
+include '../pagina/principal.php';
 
 
 ?>
-<div class="config">
-    <h2>Feedback</h2><br><br>
+<div id="edit">
+
+    <h3>Feedback</h3><br><br>
 
     <form method="post" action="comentFeedback.php">
     
