@@ -35,36 +35,61 @@ and open the template in the editor.
     <?php
 $query = "select * from fundo where usuario_id = $_SESSION[id]";
 $result2 = mysqli_query($conexao, $query);
-if ($linha = mysqli_fetch_array($result2)){
-    if ($linha['cor']!=null){
-        ?>
-        <style>
+//if ($linha = mysqli_fetch_array($result2)){
+//    if ($linha['cor']!=null){
+//        ?>
+<!--        <style>
     body{
-background-color: <?=$linha['cor']?>
+background-color: 
     }
 </style>
-<?php
-    }
-    if ($linha['imagem']!=null){
-        ?>
+//<?php
+//    }
+//    if ($linha['imagem']!=null){
+//        ?>
 <style>
     body{
-        background-image: <?=$linha['imagem']?>
+        background-image: 
     }
-</style>
+</style>-->
+
 <?php
-    }
-    
-}
+//        
+//    }
+//    
+//}
 ?>
+
 
   </head>
   <body>
       <div class="w3-container">
 
   <div class="w3-bar w3-light-grey">
-    <a href="#" class="w3-bar-item w3-button"><img src="../img/config.png" width="20" onclick="prim()" style="margin: 10px 0;"/></a>
+      <div class="w3-dropdown-click">
+      <button class="w3-button" onclick="prim()">
+     <a href="#" class="w3-bar-item w3-button"><img src="../img/config.png" width="20" style="margin: 10px 0;"/></a>
+      </button>
+      <div id="conf" class="w3-dropdown-content w3-bar-block w3-card w3-light-grey">
+          <ul>
+<!--    <li id="con"><b>Configurações</b></li>-->
+        <li><a class="w3-bar-item w3-button" href="../usuario/editarPerfil.php">Editar perfil</a></li>
+        <li><a class="w3-bar-item w3-button" href="../config/adicionarContato.php">Adicionar contato</a></li>
+        <li><a class="w3-bar-item w3-button" href="../config/excluirContato.php">Excluir contato</a></li>
+        <li><a class="w3-bar-item w3-button" href="../config/personalizar.php">Personalizar</a></li>
+        <li><a class="w3-bar-item w3-button" href="../config/feedback.php">Feedback</a></li>
+        <li><a class="w3-bar-item w3-button" id="sair" onclick="myFunction()">Sair</a></li>
+</ul>
+      </div>
+      </div>
     <a href="../pagina/principal.php" class="w3-bar-item w3-button" style="font-size: 25px;">PRIM</a>
+    <?php
+    if (isset($linha['foto'])){
+           ?><img class="w3-bar-item w3-button w3-right" src="../upload/<?=$linha['foto']?>" width="200" height="200"></td> <?php
+        }else{
+            ?><img class="w3-bar-item w3-button w3-right" src="../img/user.svg" height="40" width="40"><?php
+        }
+        ?>
     <a href="../usuario/editarPerfil.php" class="w3-bar-item w3-button w3-right"><?=$_SESSION['nome']?></a>
     
     
@@ -107,6 +132,15 @@ function not() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+function prim() {
+    var x = document.getElementById("conf");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
 </script>
 <!--      <div class="row">
           <div class="col-md-6 col-md-offset 3">
@@ -131,17 +165,7 @@ $linha2 = mysqli_fetch_array($result);
         <?php
             
         ?>
-        <div id="conf">
-<ul>
-    <li id="con"><b>Configurações</b></li>
-        <li><a href="../usuario/editarPerfil.php">Editar perfil</a></li>
-        <li><a href="../config/adicionarContato.php">Adicionar contato</a></li>
-        <li><a href="../config/excluirContato.php">Excluir contato</a></li>
-        <li><a href="../config/personalizar.php">Personalizar</a></li>
-        <li><a href="../config/feedback.php">Feedback</a></li>
-        <li><a id="sair" onclick="myFunction()">Sair</a></li>
-</ul>
-</div>
+        
 
 <p id="demo"></p>
 
@@ -157,14 +181,7 @@ function myFunction() {
 }
 </script>
         <script>
-function prim() {
-    var x = document.getElementById("conf");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
+
 </script>
   </body>
   
