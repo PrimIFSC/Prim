@@ -17,9 +17,9 @@
             <center> 
         <div id="content">
             <br><h3 id="up">Editar perfil</h3>
-        <form method="post" action="editar.php">
+        <form method="post" action="<?=$url?>usuario/editar.php">
             <input type="hidden" name="id" value="<?= $id ?>">
-            <input id="confi" name="arquivo" type="file"><img src="../img/fotoCont.png" height="70" width="70"/><br><br>
+            <input id="confi" name="arquivo" type="file"><img src="<?=$url?>img/fotoCont.png" height="70" width="70"/><br><br>
             <h4 id="confi">Informações pessoais</h4>
             Nome: <input type="text" name="nome" value="<?= $linha['nome'] ?>" class="form-control"><br><br>
             <h4 id="confi">Informações de contato</h4>
@@ -31,7 +31,7 @@
 <div id="per">
 
 <input name="fundo" type="file"><br>
-    <a href="cor.php"><img src="../img/cor.png" height="40"><br>Cores</a><br>
+    <a href="<?=$url?>config/cor.php"><img src="<?=$url?>img/cor.png" height="40"><br>Cores</a><br>
     <input id="save" type="submit" value="Salvar"<button onclick="myFunction3()"></button>
         </form>
 </div>
@@ -51,9 +51,9 @@
 function myFunction3() {
     var txt;
     if (confirm("Suas alterações foram salvas")) {
-        location.href="../pagina/principal.php";
+        location.href="<?=$url?>pagina/principal.php";
     } else {
-        location.href='editarPerfil.php';
+        location.href='<?=$url?>usuario/editarPerfil.php';
     }
     document.getElementById("demo").innerHTML = txt;
 }

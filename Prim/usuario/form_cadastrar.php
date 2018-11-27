@@ -32,7 +32,7 @@ and open the template in the editor.
             <center> 
         <div id="content">
              <center>
-        <form id="log" method="post" action="cadastrar.php">
+        <form id="log" method="post" action="<?=$url?>usuario/cadastrar.php">
             <h1><I>PRIM</i></h1><br><br><br>
             <label>Nome</label>
             <input type="text" name="nome" required class="form-control" placeholder="Nome"><br><br>

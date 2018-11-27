@@ -18,7 +18,7 @@ mysqli_query($conexao, $query);
  $email->enviarEmail($destinatario, $assunto, $mensagem);
  
 	 		  
-header('Location: feedback.php'); 
+header('Location: '.$url.'config/feedback.php'); 
 	 		   
 //teste
 //$comentário = $comentário + $_session['email'];

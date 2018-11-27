@@ -1,7 +1,7 @@
 <?php
 
 // Desenvolvimento
-// $url = "http://localhost/";
+ $url = "http://localhost/Prim/";
 // $username = "root";
 // $password = "ifsc";
 // $dbname = "ifsc";

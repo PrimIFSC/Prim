@@ -41,7 +41,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
 
 <table>
     <tr>
-               <th id="list"><img src="../img/user.svg" height="60" width="60"></th>
+               <th id="list"><img src="<?=$url?>img/user.svg" height="60" width="60"></th>
         </tr>
         <tr>
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
@@ -67,7 +67,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
         <div class="modal-body">
           
               
-          <form action="../usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
+          <form action="<?=$url?>usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
         <div class="col-lg-12">
             <div class="input-group">
        <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem" class="form-control"></textarea><br>
@@ -77,7 +77,7 @@ while ($linha = mysqli_fetch_array($resultado)) {
 <!--       <input name="arquivo" type="file" value="a">
        <input name="arquivo" type="file" value="v">-->
 <!--       <button name="arquivo" type="file" value="v"><img src="../img/video.png" height="20" width="20"/></a></button>-->
-       <select name="tempo"><img src="../img/time.png" height="20" width="20"/>
+       <select name="tempo"><img src="<?=$url?>img/time.png" height="20" width="20"/>
            <option  value="2000" selected>2s</option>
            <option  value="5000">5s</option>
            <option  value="7000">7s</option>

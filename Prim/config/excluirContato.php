@@ -20,7 +20,7 @@ $resultado = mysqli_query($conexao, $sql);
     while ($linha = mysqli_fetch_array($resultado)) {
         ?>
         <tr>
-            <th id="list"><img src="../img/user.svg" height="60" width="60"></th>
+            <th id="list"><img src="<?=$url?>img/user.svg" height="60" width="60"></th>
         </tr>
         <tr>
             <th id="list"><button onclick="myFunction2(<?= $linha['id']?>)"><?=$linha['nome']?></button></th>
@@ -36,9 +36,9 @@ $resultado = mysqli_query($conexao, $sql);
 function myFunction2(id) {
     var txt;
     if (confirm("Deseja mesmo excluir?")) {
-        location.href='excluirCont.php?id='+id;
+        location.href='<?=$url?>config/excluirCont.php?id='+id;
     } else {
-        location.href='excluirContato.php'
+        location.href='<?=$url?>config/excluirContato.php'
     }
     document.getElementById("demo").innerHTML = txt;
 }

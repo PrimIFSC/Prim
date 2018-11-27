@@ -38,14 +38,14 @@ and open the template in the editor.
         
     <center> 
         
-            <form id="log" method="post" action="usuario/login.php" enctype="multipart/form-data">
+            <form id="log" method="post" action="<?=$url?>usuario/login.php" enctype="multipart/form-data">
                 <div class="form-group">
                 <h1><I>PRIM</i></h1><br><br><br>
                 <label>E-mail:</label> 
                 <p><input type="email" name="email" class="form-control" placeholder="E-mail"></p><br><br>
                 <label>Senha:</label> 
                 <p><input type="password" name="senha" class="form-control" placeholder="********"></p><br><br><br>
-                <a href="usuario/form_cadastrar.php">Crie sua conta<br><br>
+                <a href="<?=$url?>usuario/form_cadastrar.php">Crie sua conta<br><br>
                     <p><input type="submit" value="Entrar" class="btn btn-primary btn-lg btn-block"></p>
                 </div>
         </form>

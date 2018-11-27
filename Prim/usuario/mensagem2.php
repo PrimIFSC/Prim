@@ -2,7 +2,6 @@
 //session_start();
 //include '../conectar.php';
 include '../cabe/cabecalho.php';
-include './timer.php';
 //include './autenticar.php';
 
 $id_contato = $_GET['id'];
@@ -56,17 +55,17 @@ while ($linha = mysqli_fetch_array($resultado)) {
                 <?php
                 }if ($linha['tipo']=='i'){
                     ?>
-                <td><br><img src="../upload/<?=$linha['conteudo']?>" width="200" height="200"></td>
+                <td><br><img src="<?=$url?>upload/<?=$linha['conteudo']?>" width="200" height="200"></td>
                     <?php
                 }if ($linha['tipo']=='a'){
                     ?>
                 <audio autoplay="autoplay" controls="controls">
-                <source src="../upload/<?=$linha['conteudo']?>" type="audio/mp3" />
+                <source src="<?=$url?>upload/<?=$linha['conteudo']?>" type="audio/mp3" />
                     <?php
                 }if ($linha['tipo']=='v'){
                     ?>
                 <video width="320" height="240" controls="controls">
-                <source src="../upload/<?=$linha['conteudo']?>" type="video/mp4">
+                <source src="<?=$url?>upload/<?=$linha['conteudo']?>" type="video/mp4">
                     <?php
                 }                     
                     
@@ -128,8 +127,3 @@ while ($linha = mysqli_fetch_array($resultado)) {
 </table>
 </div>
 
-
-    
-<?php
-
-        ?>

@@ -74,23 +74,23 @@ background-color:
       <div id="conf" class="w3-dropdown-content w3-bar-block w3-card w3-light-grey">
           <ul>
 <!--    <li id="con"><b>Configurações</b></li>-->
-        <li><a class="w3-bar-item w3-button" href="../usuario/editarPerfil.php">Editar perfil</a></li>
-        <li><a class="w3-bar-item w3-button" href="../config/adicionarContato.php">Adicionar contato</a></li>
-        <li><a class="w3-bar-item w3-button" href="../config/excluirContato.php">Excluir contato</a></li>
-        <li><a class="w3-bar-item w3-button" href="../config/feedback.php">Feedback</a></li>
+        <li><a class="w3-bar-item w3-button" href="<?=$url?>usuario/editarPerfil.php">Editar perfil</a></li>
+        <li><a class="w3-bar-item w3-button" href="<?=$url?>config/adicionarContato.php">Adicionar contato</a></li>
+        <li><a class="w3-bar-item w3-button" href="<?=$url?>config/excluirContato.php">Excluir contato</a></li>
+        <li><a class="w3-bar-item w3-button" href="<?=$url?>config/feedback.php">Feedback</a></li>
         <li><a class="w3-bar-item w3-button" id="sair" onclick="myFunction()">Sair</a></li>
 </ul>
       </div>
       </div>
-    <a href="../pagina/principal.php" class="w3-bar-item w3-button" style="font-size: 25px;">PRIM</a>
+    <a href="<?=$url?>pagina/principal.php" class="w3-bar-item w3-button" style="font-size: 25px;">PRIM</a>
     <?php
     if (isset($linha['foto'])){
-           ?><img class="w3-bar-item w3-button w3-right" src="../upload/<?=$linha['foto']?>" width="200" height="200"></td> <?php
+           ?><img class="w3-bar-item w3-button w3-right" src="<?=$url?>upload/<?=$linha['foto']?>" width="200" height="200"></td> <?php
         }else{
-            ?><img class="w3-bar-item w3-button w3-right" src="../img/user.svg" height="40" width="40"><?php
+            ?><img class="w3-bar-item w3-button w3-right" src="<?=$url?>img/user.svg" height="40" width="40"><?php
         }
         ?>
-    <a href="../usuario/editarPerfil.php" class="w3-bar-item w3-button w3-right"><?=$_SESSION['nome']?></a>
+    <a href="<?=$url?>usuario/editarPerfil.php" class="w3-bar-item w3-button w3-right"><?=$_SESSION['nome']?></a>
     
     
     <?php
@@ -109,13 +109,13 @@ $result = mysqli_query($conexao, $sql);
               $result3= mysqli_query($conexao, $usuario);
               $linha3= mysqli_fetch_array($result3);
               ?>
-          <a href="../usuario/mensagem2.php?id=<?=$linha3['id']?>" class="w3-bar-item w3-button"><i>Nova mensagem de </i><b><?=$linha3['nome']?></b></a>
+          <a href="<?=$url?>usuario/mensagem2.php?id=<?=$linha3['id']?>" class="w3-bar-item w3-button"><i>Nova mensagem de </i><b><?=$linha3['nome']?></b></a>
           <?php
           }
            ?>
       </div>
     </div>
-    <form id="busc" action="../config/busca2.php" method="post">
+    <form id="busc" action="<?=$url?>config/busca2.php" method="post">
         <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search.." name="busca">
         <label for="submit"><a class="w3-bar-item w3-button" style="padding: 10px;"><i class="fa fa-search"></i></a></label><input type="submit" value="" id="submit" name="submit" hidden="">
     </form>
@@ -173,9 +173,9 @@ $linha2 = mysqli_fetch_array($result);
 function myFunction() {
     var txt;
     if (confirm("Deseja mesmo sair?")) {
-        location.href="../config/sair.php";
+        location.href="<?=$url?>config/sair.php";
     } else {
-        location.href='../cabe/cabecalho.php';
+        location.href='<?=$url?>cabe/cabecalho.php';
     }
     document.getElementById("demo").innerHTML = txt;
 }

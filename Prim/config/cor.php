@@ -3,7 +3,7 @@ include '../cabe/cabecalho.php';
 
 ?>
 <body>
-    <form action="../mudarCor.php" method="post">    
+    <form action="<?=$url?>mudarCor.php" method="post">    
         <select name="cor">
         <option <button value="#4CAF50" class="button " onclick="green()"></option>
         <option <button value="#008CBA" class="button button2" onclick="blue()"></option>

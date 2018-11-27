@@ -11,7 +11,7 @@ $repSenha = $_POST['repSenha'];
 if ($senha == $repSenha) {
 $sql = "insert into usuario(nome, email, senha) values ('$nome', '$email', '$senha')";
 mysqli_query($conexao, $sql);
-header("Location: form_login.php");
+header("Location: ".$url."usuario/form_login.php");
 } else {
     echo 'Senhas não conferem';
     //header("Location: form_cadastrar.php");

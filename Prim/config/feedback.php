@@ -7,7 +7,7 @@ include '../pagina/principal.php';
 
     <h3>Feedback</h3><br><br>
 
-    <form method="post" action="comentFeedback.php">
+    <form method="post" action="<?=$url?>config/comentFeedback.php">
     
 <input type="radio" name="optFeedback" value="sugestao" checked>Sugestão
 <input type="radio" name="optFeedback" value="problema">Problema<br><br><br>

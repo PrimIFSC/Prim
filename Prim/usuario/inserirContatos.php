@@ -10,7 +10,7 @@ $sql = "insert into lista (usuario_id, contato_id) values ($_SESSION[id], $id)";
 
 mysqli_query($conexao, $sql);
 
-header("Location: ../config/adicionarContato.php");
+header("Location: ".$url."config/adicionarContato.php");
 
 
 

@@ -12,4 +12,4 @@ mysqli_query($conexao, $sql);
 
 echo $sql;
 
-header('Location:  excluirContato.php');
+header('Location:  '.$url.'config/excluirContato.php');

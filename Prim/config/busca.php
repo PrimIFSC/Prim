@@ -27,17 +27,17 @@ while ($linha = mysqli_fetch_array($resultado)) {
             if (!$contato) {
                 ?>
 <div id="edit">
-    <form id="busc2" action="../config/busca.php" method="post">
+    <form id="busc2" action="<?=$url?>config/busca.php" method="post">
         <input type="text" class="w3-bar-item w3-input w3-white w3-mobile" placeholder="Search.." name="busca">
         <label for="submit"><a class="w3-bar-item w3-button" style="padding: 10px;"><i class="fa fa-search"></i></a></label><input type="submit" value="" id="submit" name="submit" hidden="">
     </form>
     <br><br><br>
 <table>
     <tr>
-               <th id="list"><img src="../img/user.svg" height="60" width="60"></th>
+               <th id="list"><img src="<?=$url?>img/user.svg" height="60" width="60"></th>
         </tr>
         <tr>
-            <th id="list"><a href="../usuario/inserirContatos.php?id=<?= $linha['id']?>"><?= $linha['nome']?></a></th>
+            <th id="list"><a href="<?=$url?>usuario/inserirContatos.php?id=<?= $linha['id']?>"><?= $linha['nome']?></a></th>
         </tr>
 </table>
     

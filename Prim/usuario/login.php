@@ -19,7 +19,7 @@ if ($resultado == null){
 }else{
     logar($resultado['email'], $resultado['id'], $resultado['nome']);
     
-    header("Location: ../pagina/principal.php");
+    header("Location: ".$url."pagina/principal.php");
 }
 
 

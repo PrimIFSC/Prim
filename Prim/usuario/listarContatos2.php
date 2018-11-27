@@ -29,7 +29,7 @@ $resultado = mysqli_query($conexao, $sql);
         ?>
     
         <tr>
-            <img src="../img/user.svg" height="80" width="80">
+            <img src="<?=$url?>img/user.svg" height="80" width="80">
         </tr>
         <tr>
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" data-id="<?= $linha['id']?>"><?= $linha['nome']?></button>
@@ -59,15 +59,15 @@ $resultado = mysqli_query($conexao, $sql);
         <div class="modal-body">
           
               
-          <form action="../usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
+          <form action="<?=$url?>usuario/conteudo.php" id="form-chat" enctype="multipart/form-data" method="post">
         <div class="col-lg-12">
             <div class="input-group">
        <textarea id="txt" name="mensagem" placeholder="Insira sua mensagem" class="form-control"></textarea><br>
        
 <!--       <button name="arquivo" type="file" value="a"><img src="../img/audio.png" height="20" width="20"/></a></button>  -->
        
-       <span class="btn btn-default btn-file"><span><img src="../img/galeria.png" height="40"></span><input type="file" name="arquivo" hidden accept="image/png, image/jpeg"></span>
-       <select name="tempo"><img src="../img/time.png" height="20" width="20"/>
+       <span class="btn btn-default btn-file"><span><img src="<?=$url?>img/galeria.png" height="40"></span><input type="file" name="arquivo" multiple="multiple" hidden accept="image/png, image/jpeg"></span>
+       <select name="tempo"><img src="<?=$url?>img/time.png" height="20" width="20"/>
            <option  value="2000" selected>2s</option>
            <option  value="5000">5s</option>
            <option  value="7000">7s</option>

@@ -10,7 +10,7 @@ $resultado = mysqli_query($conexao, $query);
 
 $resultado_contato = mysqli_query($conexao, $sql);
 ?>
-<link type="text/css" rel="stylesheet" href="../css/style.css">
+<link type="text/css" rel="stylesheet" href="<?=$url?>css/style.css">
 <div id="config2">
 <table>            
     <?php
@@ -31,10 +31,10 @@ $resultado_contato = mysqli_query($conexao, $sql);
             if (!$contato) {
                 ?>
            <tr>
-               <th id="list"><img src="../img/user.svg" height="60" width="60"></th>
+               <th id="list"><img src="<?=$url?>img/user.svg" height="60" width="60"></th>
         </tr>
         <tr>
-            <th id="list"><a href="../usuario/inserirContatos.php?id=<?= $linha['id']?>"><?= $linha['nome']?></a></th>
+            <th id="list"><a href="<?=$url?>usuario/inserirContatos.php?id=<?= $linha['id']?>"><?= $linha['nome']?></a></th>
         </tr>
             <?php
         }

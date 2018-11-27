@@ -70,4 +70,4 @@ mysqli_query($conexao, $sql2);
 
 //echo $mensagem;
 
-header("Location: ../pagina/principal.php");
+header("Location: ".$url."pagina/principal.php");

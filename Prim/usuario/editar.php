@@ -31,6 +31,6 @@ if (isset($_FILES['arquivo'] ['name'] )){
 
 
 
-header('Location: ../pagina/principal.php');
+header('Location: '.$url.'pagina/principal.php');
 
 
